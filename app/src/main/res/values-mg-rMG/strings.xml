@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ProjetM1</string>
+    <string name="bouton_de_demarage">FANOMBOHANA</string>
+    <string name="bouton">SORATRY NY BOKOTRA</string>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+</resources>
