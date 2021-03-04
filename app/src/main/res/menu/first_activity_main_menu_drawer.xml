@@ -28,7 +28,8 @@
     </group>
     <item android:title="Bilan"
                 >
-        <menu android:checkableBehavior="single">
+        <menu >
+            <group android:checkableBehavior="single" >
                 <item
                     android:id="@+id/first_activity_nav_view_bulletin_paie"
                     android:title="Bulletin de paie"
@@ -41,6 +42,8 @@
                     android:id="@+id/first_activity_nav_view_graphique"
                     android:title="Diagramme"
                     android:icon="@drawable/diagramme"/>
+
+            </group>
         </menu>
     </item>
 
