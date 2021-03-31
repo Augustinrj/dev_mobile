@@ -1,25 +1,28 @@
 package com.example.projetm1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.model.Professeur;
+import com.example.projetm1.professeur.AddProfesseur;
 import com.example.projetm1.professeur.ProfesseurAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static androidx.recyclerview.widget.LinearLayoutManager.*;
 
 public class Professeurview extends Fragment {
     public static final String LOG_TAG = "AndroidExample";
     private RecyclerView recyclerView;
+    private Button buttonAddProf;
     public static Professeurview newInstance(){
         return (new Professeurview());
     }
@@ -28,9 +31,19 @@ public class Professeurview extends Fragment {
         List<Professeur> professeurs = getListData();
 
         View view= inflater.inflate(R.layout.professeur_view,container,false);
+
+        this.buttonAddProf = (Button)view.findViewById(R.id.buttonadd);
         this.recyclerView = (RecyclerView)view.findViewById(R.id.recyclerview);
         recyclerView.setAdapter(new ProfesseurAdapter(getContext(), professeurs));
 
+        //Button set onclicklistener
+        buttonAddProf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), AddProfesseur.class);
+                startActivity(i);
+            }
+        });
         // RecyclerView scroll vertical
         RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);

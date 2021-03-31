@@ -4,4 +4,6 @@
     <string name="bouton_de_demarage">BUTTON OF BOOT</string>
     <string name="navigation_drawer_open" translatable="false">Ouverture</string>
     <string name="navigation_drawer_close" translatable="false">Fermeture</string>
+    <string name="rechercher">rechercher</string>
+    <string name="hint">hint</string>
 </resources>

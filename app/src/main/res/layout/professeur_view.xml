@@ -6,20 +6,82 @@
     android:id="@+id/first_activity_nav_view_professeur"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".Professeurview">
+    android:orientation="horizontal"
+    tools:context=".Professeurview"
+    tools:layout_editor_absoluteY="25dp"
+    android:layout_marginBottom="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/recherche"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerview"
+        app:layout_constraintEnd_toEndOf="@id/recyclerview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textinput"
+                android:layout_width="197dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_margin="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/button"/>
+            <Button
+                android:id="@+id/button"
+                android:layout_width="38dp"
+                android:layout_height="30dp"
+                android:layout_margin="0dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="1dp"
+                android:drawableStart="@drawable/ic_search_24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/buttonadd"
+                app:layout_constraintStart_toEndOf="@+id/textinput"
+                app:layout_constraintTop_toTopOf="parent" />
+            <Button
+            android:id="@+id/buttonadd"
+            android:layout_width="38dp"
+            android:layout_height="30dp"
+            android:layout_margin="0dp"
+            android:layout_marginTop="1dp"
+             android:layout_marginStart="30dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="1dp"
+            android:gravity="end"
+            android:drawableStart="@drawable/ic_add_24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintTop_toBottomOf="@+id/recherche"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_marginBottom="5dp"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
