@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".professeur.profDAO.AddProfesseur"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/first_activity_main_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:theme="@style/toolbarStyle"/>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="121dp"
+            android:src="@drawable/matiere_24px" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:layout_marginEnd="19dp"
+            android:stateListAnimator="@android:anim/fade_in"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:visibility="visible"
+            app:boxBackgroundColor="@color/design_default_color_on_secondary"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxStrokeWidth="1dp"
+            app:hintTextAppearance="@style/EditTextTheme"
+            app:startIconTintMode="screen"
+            tools:visibility="visible">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/identifiant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Identifiant"
+                android:textColor="@color/colorPrimaryDark" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:layout_marginEnd="19dp"
+            android:stateListAnimator="@android:anim/fade_in"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:visibility="visible"
+            app:boxBackgroundColor="@color/design_default_color_on_secondary"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxStrokeWidth="1dp"
+            app:hintTextAppearance="@style/EditTextTheme"
+            app:startIconTintMode="screen"
+            tools:visibility="visible">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/designation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Designation"
+                android:textColor="@color/colorPrimaryDark" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:layout_marginEnd="19dp"
+            android:stateListAnimator="@android:anim/fade_in"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:visibility="visible"
+            app:boxBackgroundColor="@color/design_default_color_on_secondary"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxStrokeWidth="1dp"
+            app:hintTextAppearance="@style/EditTextTheme"
+            app:startIconTintMode="screen"
+            tools:visibility="visible">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nbheures"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre heures total"
+                android:textColor="@color/colorPrimaryDark" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:id="@+id/btn_save_matiere"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/colorPrimary"
+            android:text="Enregistrer"/>
+    </LinearLayout>
+</LinearLayout>

@@ -27,6 +27,11 @@
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".FirstActivity"/>
         </activity>
         <activity
+            android:name=".matiere.AddMatiere"
+            android:parentActivityName=".FirstActivity" android:label="Ajouter Matiere">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".FirstActivity"/>
+        </activity>
+        <activity
             android:name=".FirstActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait">

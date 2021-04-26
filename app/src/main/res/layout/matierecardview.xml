@@ -24,7 +24,7 @@
             android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/user_prof"
+            app:srcCompat="@drawable/matiere_24px"
             tools:ignore="VectorDrawableCompat" />
 
         <TextView
@@ -37,7 +37,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="0dp"
             android:layout_marginRight="16dp"
-            android:text="Country Name"
+            android:text="Num matiere"
             android:textSize="22sp"
             app:layout_constraintEnd_toStartOf="@id/textView_options"
             app:layout_constraintStart_toEndOf="@+id/imageview_prof"
@@ -70,7 +70,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            android:text="Popupation"
+            android:text="designation"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageview_prof"
             app:layout_constraintTop_toBottomOf="@+id/textView_1" />
@@ -85,7 +85,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            android:text="vide"
+            android:text="nombre heures"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageview_prof"
             app:layout_constraintTop_toBottomOf="@+id/textView_2" />
