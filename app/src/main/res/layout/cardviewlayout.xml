@@ -39,22 +39,27 @@
             android:layout_marginRight="16dp"
             android:text="Country Name"
             android:textSize="22sp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/textView_options"
             app:layout_constraintStart_toEndOf="@+id/imageview_prof"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!--<item-->
-            <!--android:title="Add"-->
-            <!--android:id="@+id/add_item"-->
-            <!--android:icon="@drawable/list"-->
-            <!--android:layout_marginTop="16dp"-->
-            <!--android:layout_marginRight="16dp"-->
-            <!--android:layout_width="35dp"-->
-            <!--android:layout_height="35dp"-->
-            <!--app:layout_constraintEnd_toEndOf="parent"-->
-            <!--app:layout_constraintStart_toEndOf="@+id/textView_1"-->
-            <!--app:layout_constraintTop_toTopOf="parent"-->
-            <!--app:showAsAction="always" />-->
+        <TextView
+            android:id="@+id/textView_options"
+            android:layout_width="20dp"
+            android:textAlignment="gravity"
+            android:layout_height="35dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="0dp"
+            android:text="&#8942;"
+            android:textSize="22dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView_1"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textAppearance="?android:textAppearanceLarge"/>
+
         <TextView
             android:id="@+id/textView_2"
             android:textAlignment="gravity"
@@ -85,39 +90,39 @@
             app:layout_constraintStart_toEndOf="@+id/imageview_prof"
             app:layout_constraintTop_toBottomOf="@+id/textView_2" />
 
-        <Button
-            android:id="@+id/editbtn"
-            android:layout_width="35dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="120dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginBottom="0dp"
-            android:background="#4F949C"
-            android:drawableStart="@drawable/ic_edit_24dp"
-            android:textSize="8sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/supprbtn"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView_3"
-            app:layout_constraintVertical_bias="0.0"
-            />
+        <!--<Button-->
+            <!--android:id="@+id/editbtn"-->
+            <!--android:layout_width="35dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginStart="120dp"-->
+            <!--android:layout_marginTop="1dp"-->
+            <!--android:layout_marginEnd="0dp"-->
+            <!--android:layout_marginBottom="0dp"-->
+            <!--android:background="#4F949C"-->
+            <!--android:drawableStart="@drawable/ic_edit_24dp"-->
+            <!--android:textSize="8sp"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintEnd_toStartOf="@+id/supprbtn"-->
+            <!--app:layout_constraintHorizontal_bias="0.0"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/textView_3"-->
+            <!--app:layout_constraintVertical_bias="0.0"-->
+            <!--/>-->
 
-        <Button
-            android:id="@+id/supprbtn"
-            android:layout_width="35dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginBottom="0dp"
-            android:background="#4F949C"
-            android:drawableStart="@drawable/ic_delete_24dp"
-            android:textSize="8sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/editbtn"
-            app:layout_constraintTop_toBottomOf="@+id/textView_3" />
+        <!--<Button-->
+            <!--android:id="@+id/supprbtn"-->
+            <!--android:layout_width="35dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginStart="30dp"-->
+            <!--android:layout_marginEnd="0dp"-->
+            <!--android:layout_marginTop="1dp"-->
+            <!--android:layout_marginBottom="0dp"-->
+            <!--android:background="#4F949C"-->
+            <!--android:drawableRight="@drawable/ic_delete_24dp"-->
+            <!--android:textSize="8sp"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintStart_toEndOf="@id/editbtn"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/textView_3" />-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

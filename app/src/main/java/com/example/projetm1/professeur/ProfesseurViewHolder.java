@@ -13,7 +13,7 @@ public class ProfesseurViewHolder extends RecyclerView.ViewHolder {
     ImageView professeurIcon;
     TextView textView1;
     TextView textView2;
-    TextView textView3;
+    TextView textView3,textView_option;
 
     public ProfesseurViewHolder (@NonNull View itemView){
         super(itemView);
@@ -21,5 +21,6 @@ public class ProfesseurViewHolder extends RecyclerView.ViewHolder {
         this.textView1 = (TextView) itemView.findViewById(R.id.textView_1);
         this.textView2 = (TextView) itemView.findViewById(R.id.textView_2);
         this.textView3  = (TextView) itemView.findViewById(R.id.textView_3);
+        this.textView_option = (TextView) itemView.findViewById(R.id.textView_options);
     }
 }

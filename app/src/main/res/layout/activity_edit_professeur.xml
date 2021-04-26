@@ -43,7 +43,7 @@
             tools:visibility="visible">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/identifiant"
+                android:id="@+id/identifiantedit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Identifiant"
@@ -69,14 +69,14 @@
             tools:visibility="visible">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/nom"
+                android:id="@+id/nom_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nom"
                 android:textColor="@color/colorPrimaryDark" />
         </com.google.android.material.textfield.TextInputLayout>
         <Button
-            android:id="@+id/btn_save_prof"
+            android:id="@+id/btn_save_edit_prof"
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
