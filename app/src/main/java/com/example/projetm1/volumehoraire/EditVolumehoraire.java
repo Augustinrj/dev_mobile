@@ -35,7 +35,7 @@ public class EditVolumehoraire  extends AppCompatActivity {
         setContentView(R.layout.activity_edit_volume);
         super.onCreate(savedInstanceState);
         this.configureToolbar();
-
+        this.initUI();
         Bundle extras = getIntent().getExtras();
         final  String numat = extras.getString("numMat");
         final  String matricule = extras.getString("matricule");
