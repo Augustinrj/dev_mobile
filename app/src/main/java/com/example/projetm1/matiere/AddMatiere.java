@@ -97,10 +97,12 @@ public class AddMatiere extends AppCompatActivity {
             String result = reader.getString("message");
             //Toast.makeText(null,"Message : "+result,Toast.LENGTH_LONG).show();
             identifiant= (TextInputEditText) findViewById(R.id.identifiant);
+            designation = findViewById(R.id.designation);
+            nbheures = findViewById(R.id.nbheures);
             identifiant.setText("");
             designation.setText("");
             nbheures.setText("");
-            Toast.makeText(null,"",Toast.LENGTH_LONG);
+            Toast.makeText(null,"Matiere ajouté",Toast.LENGTH_LONG);
         } catch (Exception e) {
         }
     }

@@ -95,14 +95,12 @@ public class Matiereview extends Fragment {
             String jsonString = "";
             jsonString=listMatiere.getJsonString();
             jsonString = "{\"liste\":"+jsonString.substring(4).trim()+"}";
-            // jsonString = "{ \"liste\" :[{\"id\":\"1\",\"matricule\":\"455452\",\"name\":\"gfferrr\"},{\"id\":\"2\",\"matricule\":\"57555\",\"name\":\"Defk\"}]}";
             if (jsonString!=null){
                 try {
                     JSONObject jsonObject1 = new JSONObject(jsonString);
                     JSONArray jsonArray =  jsonObject1.getJSONArray("liste");
                     for (int i=0;i<jsonArray.length();i++){
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
-//                        System.out.println(jsonObject.getInt("id"));
                         Matiere matiere = new Matiere();
                         matiere.setNumat(jsonObject.getString("numat"));
                         matiere.setDesignation(jsonObject.getString("designation"));

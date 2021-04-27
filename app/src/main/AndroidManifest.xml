@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-sdk android:targetSdkVersion="7" />
+    <!--<uses-sdk android:targetSdkVersion="7" />-->
     <application
         android:allowBackup="true"
         android:icon="@drawable/etude"
@@ -29,6 +29,21 @@
         <activity
             android:name=".matiere.AddMatiere"
             android:parentActivityName=".FirstActivity" android:label="Ajouter Matiere">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".FirstActivity"/>
+        </activity>
+        <activity
+            android:name=".matiere.EditMatiere"
+            android:parentActivityName=".FirstActivity" android:label="Editer Matiere">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".FirstActivity"/>
+        </activity>
+        <activity
+            android:name=".volumehoraire.AddVolumeHoraire"
+            android:parentActivityName=".FirstActivity" android:label="Ajouter Volume horaire">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".FirstActivity"/>
+        </activity>
+        <activity
+            android:name=".volumehoraire.EditVolumehoraire"
+            android:parentActivityName=".FirstActivity" android:label="Editer  Volume horaire">
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".FirstActivity"/>
         </activity>
         <activity

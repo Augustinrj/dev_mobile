@@ -137,4 +137,47 @@ public class MatiereShare {
         }
         return jsonString;
     }
+
+    public static Boolean EditMatiere(Matiere matiere){
+        boolean saved = false;
+        String nextLine,jsonString="";
+        try{
+            String link = "http://192.168.43.24/back-android/Controller/MatiereCtrl.php";
+            URL url = new URL (link);
+            try{
+                HttpURLConnection con = (HttpURLConnection) url.openConnection();
+                con.setRequestMethod("POST");
+                con.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
+                con.setRequestProperty("Accept", "application/json");
+                con.setConnectTimeout(5000);
+                con.setDoOutput(true);
+                con.setDoInput(true);
+                String jsonEntry  = "{\"instruction\": 5,\"numat\":\""+matiere.getNumat()+"\",\"designation\":\""+matiere.getDesignation()+"\",\"nbheure\":\""+matiere.getNbheures()+"\"}";
+                OutputStream os = con.getOutputStream();
+                byte[] input = jsonEntry.getBytes("UTF-8");
+                os.write(input, 0,input.length);
+                os.close();
+                InputStreamReader inStream = new InputStreamReader(con.getInputStream(), "UTF8");
+                BufferedReader buff = new BufferedReader(inStream);
+                while (true){
+                    nextLine =buff.readLine();
+                    if (nextLine !=null){
+                        jsonString += nextLine;
+                    }else{
+                        break;
+                    }
+
+                }
+
+                con.disconnect();
+                return  true;
+            }catch(IOException e){
+                return false;
+            }
+        }catch(MalformedURLException e){
+            return false;
+        }
+    }
+
+
 }

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="2dp"
+    android:layout_marginBottom="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#4F949C">
+
+
+
+        <ImageView
+            android:id="@+id/imageview_prof"
+            android:layout_width="110sp"
+            android:layout_height="90sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/volume_horaire_24"
+            tools:ignore="VectorDrawableCompat" />
+
+        <TextView
+            android:id="@+id/textView_1"
+            android:layout_width="0dp"
+            android:textAlignment="gravity"
+            android:layout_height="35dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="16dp"
+            android:text="Num matiere"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toStartOf="@id/textView_options"
+            app:layout_constraintStart_toEndOf="@+id/imageview_prof"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_options"
+            android:layout_width="20dp"
+            android:textAlignment="gravity"
+            android:layout_height="35dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="0dp"
+            android:text="&#8942;"
+            android:textSize="22dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView_1"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textAppearance="?android:textAppearanceLarge"/>
+
+        <TextView
+            android:id="@+id/textView_2"
+            android:textAlignment="gravity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="Num professeur"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageview_prof"
+            app:layout_constraintTop_toBottomOf="@+id/textView_1" />
+
+        <TextView
+            android:id="@+id/textView_3"
+            android:layout_width="0dp"
+            android:textAlignment="gravity"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="taux horaire"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageview_prof"
+            app:layout_constraintTop_toBottomOf="@+id/textView_2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

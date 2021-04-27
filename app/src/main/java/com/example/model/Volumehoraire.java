@@ -3,7 +3,7 @@ package com.example.model;
 public class Volumehoraire {
     private String matricule,numat;
     private  int tauxhoraire;
-
+    private int id;
     public Volumehoraire() {
     }
 
@@ -11,6 +11,14 @@ public class Volumehoraire {
         this.matricule = matricule;
         this.numat = numat;
         this.tauxhoraire = tauxhoraire;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getMatricule() {
