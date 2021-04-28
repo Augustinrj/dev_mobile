@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/first_activity_nav_view_matiere"
+    android:id="@+id/first_activity_nav_view_heure_comp"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".Montantview">
+    tools:context=".FirstActivity">
     <TextView
+        android:layout_marginTop="50dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Montant"/>
+        android:text="HEURES COMPLEMENTAIRES"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+        android:textSize="20dp"/>
+
+    <TableLayout
+        android:id="@+id/tableheurecomp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/darker_gray"
+        android:layout_marginStart="19dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginTop="20dp"></TableLayout>
 </LinearLayout>

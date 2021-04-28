@@ -1,12 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/first_activity_nav_view_bulletin_paie"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".BulletinPaieview">
     <TextView
+        android:layout_marginTop="50dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bullettin de paie"/>
+        android:text="BULLETIN DE PAIE"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+        android:textSize="20dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/spinnerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginEnd="19dp"
+        android:stateListAnimator="@android:anim/fade_in"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:visibility="visible"
+
+        app:boxBackgroundColor="@color/design_default_color_on_secondary"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxStrokeWidth="1dp"
+        app:hintTextAppearance="@style/EditTextTheme"
+        app:startIconTintMode="screen"
+        tools:visibility="visible">
+        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+            android:id="@+id/matricule_prof"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Matricule Professeur"
+            android:textColor="@color/colorPrimaryDark" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:id="@+id/nom_professeur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NOM : "
+            android:layout_marginStart="19dp"
+            android:layout_marginEnd="19dp"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"
+            />
+    <TableLayout
+        android:id="@+id/tablepaie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/darker_gray"
+        android:layout_marginStart="19dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginTop="20dp"></TableLayout>
+
+    <TextView
+        android:id="@+id/total_montant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NOM : "
+        android:layout_marginStart="19dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+        />
+
 </LinearLayout>

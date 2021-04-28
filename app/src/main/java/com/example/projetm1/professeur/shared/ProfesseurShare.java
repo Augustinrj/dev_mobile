@@ -179,4 +179,45 @@ public class ProfesseurShare {
 
             return list ;
         }
+
+    public  static String getnomProf(Professeur professeur){
+        boolean saved = false;
+        String nextLine,jsonString="";
+        try{
+            String link = "http://192.168.43.24/back-android/Controller/ProfesseurCtrl.php";
+            URL url = new URL (link);
+            try{
+                HttpURLConnection con = (HttpURLConnection) url.openConnection();
+                con.setRequestMethod("POST");
+                con.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
+                con.setRequestProperty("Accept", "application/json");
+                con.setConnectTimeout(5000);
+                con.setDoOutput(true);
+                con.setDoInput(true);
+                String jsonEntry  = "{\"instruction\": 3,\"matricule\":\""+professeur.getNumMat()+"\"}";
+                OutputStream os = con.getOutputStream();
+                byte[] input = jsonEntry.getBytes("UTF-8");
+                os.write(input, 0,input.length);
+                os.close();
+                InputStreamReader inStream = new InputStreamReader(con.getInputStream(), "UTF8");
+                BufferedReader buff = new BufferedReader(inStream);
+                while (true){
+                    nextLine =buff.readLine();
+                    if (nextLine !=null){
+                        jsonString += nextLine;
+                    }else{
+                        break;
+                    }
+
+                }
+
+                con.disconnect();
+                return  jsonString;
+            }catch(IOException e){
+                return jsonString;
+            }
+        }catch(MalformedURLException e){
+            return jsonString;
+        }
+    }
 }
