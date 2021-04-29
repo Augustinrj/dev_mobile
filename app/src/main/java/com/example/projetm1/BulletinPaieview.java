@@ -150,13 +150,6 @@ public class BulletinPaieview extends Fragment {
             }
         });
 
-
-
-
-
-
-
-
 //        for (int i=0;i<8;i++){//line
 //
 //            for (int j=0;j<4;j++){//column
