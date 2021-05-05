@@ -96,7 +96,7 @@ public class MatiereShare {
         return list ;
     }
 
-    public static String AddMatiere(Matiere matiere){
+    public static Boolean AddMatiere(Matiere matiere){
         boolean saved = false;
         String nextLine,jsonString="";
         try{
@@ -135,7 +135,7 @@ public class MatiereShare {
         }catch(MalformedURLException e){
             saved = false;
         }
-        return jsonString;
+        return true;
     }
 
     public static Boolean EditMatiere(Matiere matiere){
@@ -179,5 +179,48 @@ public class MatiereShare {
         }
     }
 
+    public  static String getdesignMat(Matiere matiere){
+        boolean saved = false;
+        String nextLine,jsonString="";
+        try{
+            String link = "http://192.168.43.24/back-android/Controller/MatiereCtrl.php";
+            URL url = new URL (link);
+            try{
+                HttpURLConnection con = (HttpURLConnection) url.openConnection();
+                con.setRequestMethod("POST");
+                con.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
+                con.setRequestProperty("Accept", "application/json");
+                con.setConnectTimeout(5000);
+                con.setDoOutput(true);
+                con.setDoInput(true);
+                String jsonEntry  = "{\"instruction\": 3,\"numat\":\""+matiere.getNumat()+"\"}";
+                System.out.println(" Json Entry : "+jsonEntry);
+                OutputStream os = con.getOutputStream();
+                byte[] input = jsonEntry.getBytes("UTF-8");
+                os.write(input, 0,input.length);
+                os.close();
+                InputStreamReader inStream = new InputStreamReader(con.getInputStream(), "UTF8");
+                BufferedReader buff = new BufferedReader(inStream);
+                while (true){
+                    nextLine =buff.readLine();
+                    if (nextLine !=null){
+                        jsonString += nextLine;
+                    }else{
+                        break;
+                    }
 
+                }
+
+                con.disconnect();
+                System.out.println(" Json debug : "+jsonString);
+                return  jsonString;
+            }catch(IOException e){
+                System.out.println(" Json debug : "+e.getMessage());
+                return jsonString;
+            }
+        }catch(MalformedURLException e){
+            System.out.println(" Json debug 2: "+e.getMessage());
+            return jsonString;
+        }
+    }
 }

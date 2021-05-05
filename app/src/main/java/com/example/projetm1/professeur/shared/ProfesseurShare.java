@@ -18,7 +18,7 @@ import java.util.List;
 
 public class ProfesseurShare {
 
-    public static String AddProfesseur(Professeur professeur){
+    public static Boolean AddProfesseur(Professeur professeur){
         boolean saved = false;
         String nextLine,jsonString="";
         try{
@@ -49,15 +49,15 @@ public class ProfesseurShare {
                     }
 
                 }
-                saved = true;
+
                 con.disconnect();
+                return true;
             }catch(IOException e){
-                saved = false;
+                return false;
             }
         }catch(MalformedURLException e){
-            saved = false;
+            return false;
         }
-        return jsonString;
     }
 
     public static Boolean EditProfesseur(Professeur professeur){

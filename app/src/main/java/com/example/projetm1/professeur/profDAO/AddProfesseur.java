@@ -16,6 +16,7 @@ import com.android.volley.RequestQueue;
 import com.example.model.Professeur;
 import com.example.projetm1.FirstActivity;
 import com.example.projetm1.R;
+import com.example.projetm1.professeur.shared.AjouterProf;
 import com.example.projetm1.professeur.shared.ProfesseurShare;
 import com.example.request.ProfRequest;
 import com.example.request.VolleySingleton;
@@ -47,24 +48,25 @@ public class AddProfesseur extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         try{
-
-
-                        Thread thread = new Thread(
-                                new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        addprof();
-                                    }
+                            if(identifiant.getText().toString().equals("")|| nom.getText().toString().equals("")){
+                                Toast.makeText(getApplicationContext(),"Tout les champs sont obligatoires",Toast.LENGTH_LONG).show();
+                            }else {
+                                AjouterProf ajouterProf = new AjouterProf(identifiant.getText().toString(),nom.getText().toString());
+                                Thread thread = new Thread(ajouterProf);
+                                thread.start();
+                                thread.join();
+                                if(ajouterProf.getResponse()){
+                                    identifiant.setText("");
+                                    nom.setText("");
+                                    Toast.makeText(getApplicationContext(),"Professeur ajouté",Toast.LENGTH_LONG).show();
+                                    startActivity(new Intent(getApplicationContext(), Professeur.class));
                                 }
-                        );
-                        thread.start();
+                            }
+
                         }catch(Exception e){
 
                         }
                     }
-
-
-
             });
 
          }catch (AndroidRuntimeException e){
@@ -80,29 +82,10 @@ public class AddProfesseur extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        startActivity(new Intent(getApplicationContext(), FirstActivity.class));
+                        startActivity(new Intent(getApplicationContext(), Professeur.class));
                     }
                 }
         );
     }
-    public void addprof(){
-        String id = identifiant.getText().toString().trim();
-        String nom_prof = nom.getText().toString().trim();
 
-        Professeur professeur = new Professeur();
-        professeur.setNumMat(id);
-        professeur.setNomProf(nom_prof);
-        String response = ProfesseurShare.AddProfesseur(professeur);
-
-        try {
-            JSONObject reader = new JSONObject(response);
-            String result = reader.getString("message");
-            //Toast.makeText(null,"Message : "+result,Toast.LENGTH_LONG).show();
-            identifiant= (TextInputEditText) findViewById(R.id.identifiant);
-            identifiant.setText("");
-            nom.setText("");
-            Toast.makeText(null,"",Toast.LENGTH_LONG);
-        } catch (Exception e) {
-        }
-    }
 }

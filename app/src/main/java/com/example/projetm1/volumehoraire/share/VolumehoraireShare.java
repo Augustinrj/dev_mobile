@@ -97,7 +97,7 @@ public class VolumehoraireShare {
         }
     }
 
-    public static String AddVolume(Volumehoraire volumehoraire) {
+    public static Boolean AddVolume(Volumehoraire volumehoraire) {
         boolean saved = false;
         String nextLine, jsonString = "";
         try {
@@ -128,15 +128,14 @@ public class VolumehoraireShare {
                     }
 
                 }
-                saved = true;
                 con.disconnect();
+                return  true;
             } catch (IOException e) {
-                saved = false;
+               return false;
             }
         } catch (MalformedURLException e) {
-            saved = false;
+           return false;
         }
-        return jsonString;
     }
 
     public static Boolean EditVolume(Volumehoraire volumehoraire) {

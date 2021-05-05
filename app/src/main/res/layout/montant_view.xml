@@ -16,25 +16,37 @@
         android:textStyle="bold"
         android:fontFamily="sans-serif-black"
         android:textSize="20dp"/>
-
-    <TableLayout
-        android:id="@+id/tableheurecomp"
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="20dp">
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/darker_gray"
-        android:layout_marginStart="19dp"
-        android:layout_marginEnd="19dp"
-        android:layout_marginTop="20dp"></TableLayout>
-    <TextView
-        android:id="@+id/montant_all"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Montant : "
-        android:layout_marginStart="19dp"
-        android:layout_marginEnd="19dp"
-        android:layout_marginTop="20dp"
-        android:textStyle="bold"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="sans-serif-black"
-        android:textSize="20dp"/>
+        android:layout_height="match_parent">
+        <TableLayout
+            android:id="@+id/tableheurecomp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/darker_gray"
+            android:layout_marginStart="19dp"
+            android:layout_marginEnd="19dp"
+            android:layout_marginTop="20dp"></TableLayout>
+        <TextView
+            android:id="@+id/montant_all"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Montant : "
+            android:layout_marginStart="19dp"
+            android:layout_marginEnd="19dp"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="sans-serif-black"
+            android:textSize="20dp"/>
+    </LinearLayout>
+
+</ScrollView>
+
 </LinearLayout>

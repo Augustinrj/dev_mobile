@@ -35,6 +35,7 @@ public class Montantview extends Fragment {
         View view = inflater.inflate(R.layout.montant_view,container,false);
         tableLayout = view.findViewById(R.id.tableheurecomp);
         afficheMontant = view.findViewById(R.id.montant_all);
+
         ArrayList<String> matriculeList = Listdematricule.getAll();
         String nom_prof="",jsonString="";
         int iter=0;

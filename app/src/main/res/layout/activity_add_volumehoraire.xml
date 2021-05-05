@@ -57,6 +57,17 @@
                 <!--android:textColor="@color/colorPrimaryDark" />
                  style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"-->
         </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:id="@+id/vlm_matiere"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Designation : "
+            android:layout_marginStart="19dp"
+            android:layout_marginEnd="19dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            />
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/spinnerLayout2"
             android:layout_width="match_parent"
@@ -84,6 +95,17 @@
                 android:hint="matricule prof"
                 android:textColor="@color/colorPrimaryDark" />
         </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:id="@+id/vlm_prof"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NOM : "
+            android:layout_marginStart="19dp"
+            android:layout_marginEnd="19dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            />
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_marginTop="20dp"

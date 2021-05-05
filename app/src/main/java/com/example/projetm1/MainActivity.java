@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity{
                     try {
                         super.run();
 
-                      sleep(1700);
+                      sleep(700);
 
                     } catch (Exception e) {
                         e.printStackTrace();

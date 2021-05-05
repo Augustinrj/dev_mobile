@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.projetm1.FirstActivity;
+import com.example.projetm1.Professeurview;
 import com.example.projetm1.R;
 import com.example.projetm1.professeur.shared.ModifyProf;
 import com.google.android.material.textfield.TextInputEditText;
@@ -33,6 +34,7 @@ public class EditProfesseur  extends AppCompatActivity {
         btn_save_edit_prof = findViewById(R.id.btn_save_edit_prof);
 
         identifiant_edit.setText(matricule);
+        identifiant_edit.setEnabled(false);
         nom_edit.setText(name);
 
         newName = nom_edit.getText().toString();
@@ -67,7 +69,7 @@ public class EditProfesseur  extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        startActivity(new Intent(getApplicationContext(), FirstActivity.class));
+                        startActivity(new Intent(getApplicationContext(), Professeurview.class));
                     }
                 }
         );

@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import com.example.model.Professeur;
 import com.example.projetm1.montant.Getmontant;
 import com.example.projetm1.professeur.shared.Getnom;
+import com.example.projetm1.volumehoraire.imported.Publicget;
 import com.example.projetm1.volumehoraire.share.Listdematricule;
 
 import org.eazegraph.lib.charts.PieChart;
@@ -35,6 +36,7 @@ public class Diagrammeview extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstance){
         View view = inflater.inflate(R.layout.diagramme_view,container,false);
         LinearLayout linearLayout = view.findViewById(R.id.legend_chart);
+       // LinearLayout linearAbout = view.findViewById(R.id.apropos);
         pieChart = view.findViewById(R.id.piechart);
 //        pieChart.addPieSlice(new PieModel("legende1",5, Color.parseColor("#ffaec8")));
 //        pieChart.addPieSlice(new PieModel("legende2",15, Color.parseColor("#beaeff")));
@@ -61,64 +63,62 @@ public class Diagrammeview extends Fragment {
                         montant = (jsonObject.getInt("montant"));
 
                         TextView cell = new TextView(getContext());
-                        cell.setText("|::| "+matricule);
+                        cell.setText("|*| "+matricule+" : "+ Publicget.getnomProf(matricule));
                         cell.setTextSize(15);
-
-
-
                         if(iter==1){
                             pieChart.addPieSlice(new PieModel(matricule,montant, Color.parseColor("#D81B60")));
-                            cell.setBackgroundColor(Color.parseColor("#D81B60"));
+                            cell.setTextColor(Color.parseColor("#D81B60"));
                         }
                         else if(iter==2){
                             pieChart.addPieSlice(new PieModel(matricule,montant,Color.parseColor("#958686")));
-                            cell.setBackgroundColor(Color.parseColor("#958686"));
+                            cell.setTextColor(Color.parseColor("#c4d712"));//#958686
                         }
                         else if(iter==3){
                             pieChart.addPieSlice(new PieModel(matricule,montant, Color.parseColor("#c4d712")));
-                            cell.setBackgroundColor(Color.parseColor("#c4d712"));
+                            cell.setTextColor(Color.parseColor("#c4d712"));
                         }
                         else if(iter==4){
                             pieChart.addPieSlice(new PieModel(matricule,montant, Color.parseColor("#00574B")));
-                            cell.setBackgroundColor(Color.parseColor("#00574B"));
+                            cell.setTextColor(Color.parseColor("#00574B"));
                         }
                         else if(iter==5){
                             pieChart.addPieSlice(new PieModel(matricule,montant,Color.parseColor("#008577")));
-                            cell.setBackgroundColor(Color.parseColor("#008577"));
+                            cell.setTextColor(Color.parseColor("#008577"));
                         }
                         else if(iter==6){
                             pieChart.addPieSlice(new PieModel(matricule,montant, Color.parseColor("#1a0fea")));
-                            cell.setBackgroundColor(Color.parseColor("#1a0fea"));
+                            cell.setTextColor(Color.parseColor("#1a0fea"));
                         }
                         else if(iter==7){
                             pieChart.addPieSlice(new PieModel(matricule,montant, Color.parseColor("#914012")));
-                            cell.setBackgroundColor(Color.parseColor("#914012"));
+                            cell.setTextColor(Color.parseColor("#914012"));
                         }
                         else if(iter==8){
                             pieChart.addPieSlice(new PieModel(matricule,montant, Color.parseColor("#09b7ec")));
-                            cell.setBackgroundColor( Color.parseColor("#09b7ec"));
+                            cell.setTextColor( Color.parseColor("#09b7ec"));
                         }
                         else if(iter==9){
                             pieChart.addPieSlice(new PieModel(matricule,montant, Color.parseColor("#ffaec8")));
-                            cell.setBackgroundColor(Color.parseColor("#ffaec8"));
+                            cell.setTextColor(Color.parseColor("#ffaec8"));
                         }
                         else  if(iter==10){
                             pieChart.addPieSlice(new PieModel(matricule,montant, Color.parseColor("#248509")));
-                            cell.setBackgroundColor(Color.parseColor("#248509"));
+                            cell.setTextColor(Color.parseColor("#248509"));
                         }
                         else if(iter==11){
                             pieChart.addPieSlice(new PieModel(matricule,montant, Color.parseColor("#ef620a")));
-                            cell.setBackgroundColor(Color.parseColor("#ef620a"));
+                            cell.setTextColor(Color.parseColor("#ef620a"));
                         }
                         else if(iter==12){
                             pieChart.addPieSlice(new PieModel(matricule,montant,Color.parseColor("#f10b0b")));
-                            cell.setBackgroundColor(Color.parseColor("#f10b0b"));
+                            cell.setTextColor(Color.parseColor("#f10b0b"));
                         }
 
                         else {
                             pieChart.addPieSlice(new PieModel(matricule,montant, Color.parseColor("#00574B")));
-                            cell.setBackgroundColor(Color.parseColor("#00574B"));
+                            cell.setTextColor(Color.parseColor("#00574B"));
                         }
+
                         linearLayout.addView(cell);
                     }catch (JSONException e){
                         System.out.println("JSONException : "+e.getMessage());

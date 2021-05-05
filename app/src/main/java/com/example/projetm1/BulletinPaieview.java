@@ -63,6 +63,8 @@ public class BulletinPaieview extends Fragment {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 nom_prof.setText("NOM : "+getnomProf(matricule.getText().toString()));
                 try {
+                    tableLayout.removeAllViews();
+                    somme=0;
                     GetBulletindepaie getBulletindepaie = new GetBulletindepaie(matricule.getText().toString());
                     Thread thread = new Thread(getBulletindepaie);
                     thread.start();
@@ -78,6 +80,7 @@ public class BulletinPaieview extends Fragment {
 
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                                 tableRow = new TableRow(getContext());
+
                                 TableRow tableRow1 = new TableRow(getContext());
                                 if(i==0){
                                     for (int x=0;x<4;x++){

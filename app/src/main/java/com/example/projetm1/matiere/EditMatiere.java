@@ -40,6 +40,7 @@ public class EditMatiere extends AppCompatActivity {
         btn_save_edit_mat = findViewById(R.id.btn_save_edit_mat);
 
         identifiant_edit.setText(numat);
+        identifiant_edit.setEnabled(false);
         designation_edit.setText(designation);
         nbheures.setText(""+nbh);
 
