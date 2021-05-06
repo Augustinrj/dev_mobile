@@ -123,7 +123,7 @@ public class AddVolumeHoraire extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 num_matiere.setText("Designation : "+Publicget.getdesignMat(numat.getText().toString()));
-                System.out.println("NOM : "+Publicget.getdesignMat(matricule.getText().toString()));
+                //System.out.println("NOM : "+Publicget.getdesignMat(matricule.getText().toString()));
             }
 
             @Override

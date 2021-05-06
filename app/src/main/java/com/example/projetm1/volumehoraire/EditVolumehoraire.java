@@ -2,10 +2,13 @@ package com.example.projetm1.volumehoraire;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +16,8 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.example.projetm1.FirstActivity;
 import com.example.projetm1.R;
+import com.example.projetm1.VolumeHoraireview;
+import com.example.projetm1.volumehoraire.imported.Publicget;
 import com.example.projetm1.volumehoraire.share.Listdematricule;
 import com.example.projetm1.volumehoraire.share.Listdenumatiere;
 import com.example.projetm1.volumehoraire.share.ModifyVolume;
@@ -94,7 +99,7 @@ public class EditVolumehoraire  extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        startActivity(new Intent(getApplicationContext(), FirstActivity.class));
+                        startActivity(new Intent(getApplicationContext(), VolumeHoraireview.class));
                     }
                 }
         );
@@ -104,10 +109,48 @@ public class EditVolumehoraire  extends AppCompatActivity {
         ArrayList<String> numatList = Listdenumatiere.getAll();
         ArrayAdapter<String> adapter = new ArrayAdapter<>(EditVolumehoraire.this,android.R.layout.simple_list_item_1,numatList);
         numat_edit.setAdapter(adapter);
+        final TextView num_matiere = findViewById(R.id.vlm_matiere);
 
         matricule_edit = findViewById(R.id.matricule);
         ArrayList<String> matriculeList = Listdematricule.getAll();
         ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<>(EditVolumehoraire.this,android.R.layout.simple_list_item_1,matriculeList);
         matricule_edit.setAdapter(stringArrayAdapter);
+        final TextView nom = findViewById(R.id.vlm_prof);
+
+        numat_edit.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                num_matiere.setText("Designation : "+ Publicget.getdesignMat(numat_edit.getText().toString().trim()));
+                //System.out.println("NOM : "+Publicget.getdesignMat(matricule.getText().toString()));
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        matricule_edit.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                nom.setText("NOM : "+ Publicget.getnomProf(matricule_edit.getText().toString()));
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
     }
 }
