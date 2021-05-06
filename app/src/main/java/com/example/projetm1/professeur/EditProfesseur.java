@@ -43,16 +43,22 @@ public class EditProfesseur  extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    ModifyProf edited = new ModifyProf(matricule,nom_edit.getText().toString().trim());
-                    Thread thread = new Thread(edited);
-                    thread.start();
-                    thread.join();
-                    if(edited.getResponse()){
-                        identifiant_edit.setText("");
-                        nom_edit.setText("");
-                        Toast.makeText(getApplicationContext()," Professeur modifié ",Toast.LENGTH_LONG).show();
+                    if(identifiant_edit.getText().toString().equals("")||nom_edit.getText().toString().equals("")){
+                        Toast.makeText(getApplicationContext()," Tous les champs sont obligatoires ",Toast.LENGTH_LONG).show();
+                    }else{
+                        ModifyProf edited = new ModifyProf(matricule,nom_edit.getText().toString().trim());
+                        Thread thread = new Thread(edited);
+                        thread.start();
+                        thread.join();
+                        if(edited.getResponse()){
+                            identifiant_edit.setText("");
+                            nom_edit.setText("");
+                            Toast.makeText(getApplicationContext()," Professeur modifié ",Toast.LENGTH_LONG).show();
+                        }
                     }
+
                 }catch (Exception e){
+                    Toast.makeText(getApplicationContext()," Valeur invalid ",Toast.LENGTH_LONG).show();
                     System.out.println("Thread Edit Prof : " +e.getMessage());
                 }
 

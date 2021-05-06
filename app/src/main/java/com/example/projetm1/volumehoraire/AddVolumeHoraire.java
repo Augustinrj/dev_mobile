@@ -89,7 +89,7 @@ public class AddVolumeHoraire extends AppCompatActivity {
                         }
 
                     }catch(Exception e){
-
+                        Toast.makeText(getApplicationContext(),"Valeur invalide",Toast.LENGTH_LONG).show();
                     }
                 }
             });

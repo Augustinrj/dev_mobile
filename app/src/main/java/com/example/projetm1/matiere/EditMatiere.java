@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.projetm1.FirstActivity;
+import com.example.projetm1.Matiereview;
 import com.example.projetm1.R;
 import com.example.projetm1.matiere.shared.ModifyMat;
 import com.google.android.material.textfield.TextInputEditText;
@@ -50,20 +51,26 @@ public class EditMatiere extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    newDesign = designation_edit.getText().toString();
-                    newNbh = Integer.valueOf(nbheures.getText().toString());
+                    if(designation_edit.getText().toString().equals("")||nbheures.getText().toString().equals("")||identifiant_edit.getText().toString().equals("")){
+                        Toast.makeText(getApplicationContext()," Erreur valeur invalide",Toast.LENGTH_LONG).show();
+                    }else{
+                        newDesign = designation_edit.getText().toString();
+                        newNbh = Integer.valueOf(nbheures.getText().toString());
 
-                    ModifyMat edited = new ModifyMat(numat,newDesign,newNbh);
-                    Thread thread = new Thread(edited);
-                    thread.start();
-                    thread.join();
-                    if(edited.getResponse()){
-                        identifiant_edit.setText("");
-                        designation_edit.setText("");
-                        nbheures.setText("");
-                        Toast.makeText(getApplicationContext()," Matiere modifié ",Toast.LENGTH_LONG).show();
+                        ModifyMat edited = new ModifyMat(numat,newDesign,newNbh);
+                        Thread thread = new Thread(edited);
+                        thread.start();
+                        thread.join();
+                        if(edited.getResponse()){
+                            identifiant_edit.setText("");
+                            designation_edit.setText("");
+                            nbheures.setText("");
+                            Toast.makeText(getApplicationContext()," Matiere modifié ",Toast.LENGTH_LONG).show();
+                        }
                     }
+
                 }catch (Exception e){
+                    Toast.makeText(getApplicationContext()," Erreur valeur invalide",Toast.LENGTH_LONG).show();
                     System.out.println("Thread Edit Prof : " +e.getMessage());
                 }
 
@@ -80,7 +87,7 @@ public class EditMatiere extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        startActivity(new Intent(getApplicationContext(), FirstActivity.class));
+                        startActivity(new Intent(getApplicationContext(), Matiereview.class));
                     }
                 }
         );

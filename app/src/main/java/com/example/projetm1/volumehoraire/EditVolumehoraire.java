@@ -57,21 +57,27 @@ public class EditVolumehoraire  extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    newNumat = numat_edit.getText().toString();
-                    newMatricule = matricule_edit.getText().toString();
-                    newTauxhoraire= Integer.valueOf(tauxhoraire_edit.getText().toString());
+                    if(numat_edit.getText().toString().equals("")||matricule_edit.getText().toString().equals("")||tauxhoraire_edit.getText().toString().equals("")){
+                        Toast.makeText(getApplicationContext()," Tous les chsmps sont obligatoires ",Toast.LENGTH_LONG).show();
+                    }else{
+                        newNumat = numat_edit.getText().toString();
+                        newMatricule = matricule_edit.getText().toString();
+                        newTauxhoraire= Integer.valueOf(tauxhoraire_edit.getText().toString());
 
-                    ModifyVolume edited = new ModifyVolume(newNumat,newMatricule,newTauxhoraire,id);
-                    Thread thread = new Thread(edited);
-                    thread.start();
-                    thread.join();
-                    if(edited.getResponse()){
-                        numat_edit.setText("");
-                        matricule_edit.setText("");
-                        tauxhoraire_edit.setText("");
-                        Toast.makeText(getApplicationContext()," Volume horaire modifié ",Toast.LENGTH_LONG).show();
+                        ModifyVolume edited = new ModifyVolume(newNumat,newMatricule,newTauxhoraire,id);
+                        Thread thread = new Thread(edited);
+                        thread.start();
+                        thread.join();
+                        if(edited.getResponse()){
+                            numat_edit.setText("");
+                            matricule_edit.setText("");
+                            tauxhoraire_edit.setText("");
+                            Toast.makeText(getApplicationContext()," Volume horaire modifié ",Toast.LENGTH_LONG).show();
+                        }
                     }
+
                 }catch (Exception e){
+                    Toast.makeText(getApplicationContext()," Valeur invalide ",Toast.LENGTH_LONG).show();
                     System.out.println("Thread Edit Volume : " +e.getMessage());
                 }
 
