@@ -74,7 +74,7 @@ public class BulletinPaieview extends Fragment {
                     jsonString = "{\"liste\":"+jsonString.trim()+"}";//substring(4).trim()
                     if (jsonString!=null){
                         try {
-                            JSONObject jsonObject1 = new JSONObject(jsonString);
+                             JSONObject jsonObject1 = new JSONObject(jsonString);
                             JSONArray jsonArray =  jsonObject1.getJSONArray("liste");
                             for (int i=0;i<jsonArray.length();i++){
 
